@@ -13,7 +13,11 @@ public class MainActivity extends AppCompatActivity {
 
     public static boolean passwordValidator(String password){
         if(password.length() > 8 &&
-                !password.equals("password")){
+                !password.equals("password") &&
+                password.matches(".*[$&+,:;=?@#|].*")&&
+                password.matches(".*[0-9].*") &&
+                password.matches(".*[A-Z].*") &&
+                password.matches(".*[a-z].*")){
             return true;
         }
         return false;

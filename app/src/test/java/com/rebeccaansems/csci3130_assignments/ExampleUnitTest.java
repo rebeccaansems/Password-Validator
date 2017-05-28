@@ -21,7 +21,28 @@ public class ExampleUnitTest {
     }
 
     @Test
+    public void passwordNoSpecialChar(){
+        assertEquals(MainActivity.passwordValidator(("ThisIsNoGood")), false);
+    }
+
+    @Test
+    public void passwordNoNumbers(){
+        assertEquals(MainActivity.passwordValidator(("ThisIsNoGood!")), false);
+    }
+
+    @Test
+    public void passwordNoCapitals(){
+        assertEquals(MainActivity.passwordValidator(("thisisn0g00d!")), false);
+    }
+
+    @Test
+    public void passwordNoLower(){
+        assertEquals(MainActivity.passwordValidator(("THISISN0G00D!")), false);
+    }
+
+
+    @Test
     public void passwordIsGood(){
-        assertEquals(MainActivity.passwordValidator(("ThisIsGoodPassword")), true);
+        assertEquals(MainActivity.passwordValidator(("ThisIsG00dP@ssword")), true);
     }
 }
