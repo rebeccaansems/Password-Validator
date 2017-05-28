@@ -11,7 +11,17 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void passwordIsPassword(){
+        assertEquals(MainActivity.passwordValidator(("password")), false);
+    }
+
+    @Test
+    public void passwordIsShort(){
+        assertEquals(MainActivity.passwordValidator(("pass")), false);
+    }
+
+    @Test
+    public void passwordIsGood(){
+        assertEquals(MainActivity.passwordValidator(("ThisIsGoodPassword")), true);
     }
 }

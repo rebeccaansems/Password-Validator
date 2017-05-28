@@ -10,4 +10,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    public static boolean passwordValidator(String password){
+        if(password.length() > 8 &&
+                !password.equals("password")){
+            return true;
+        }
+        return false;
+    }
 }
